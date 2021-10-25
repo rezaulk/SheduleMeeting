@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleMeeting.Entity
 {
-    class User
+    public class User
     {
         public int UserID {  get; set; }
         public int CompanyID {  get; set; }

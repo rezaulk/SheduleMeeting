@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace ScheduleMeeting.Entity
 {
-    class City
+    public class City
     {
         [Key]
-        public int Id {  get; set; }       
+        public int CityId {  get; set; }       
         public string CountryCode {  get; set; }
         public string CityCode {  get; set; }
         

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ScheduleMeeting.Infrustructure;
+using ScheduleMeeting.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,14 @@ namespace SheduleMeeting
             //       .UseSqlServer("Server=localhost,1433; Database=BooksDB;User Id=sa; Password=password_01;"));
             .UseSqlServer(connection));
 
+
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICompanyService, CompanyService>();
+            services.AddTransient<ICityService, CityService>();
+            services.AddTransient<ICountryService, CountryService>();
+
+
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -52,6 +61,12 @@ namespace SheduleMeeting
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(x => x
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
+
 
             app.UseRouting();
 

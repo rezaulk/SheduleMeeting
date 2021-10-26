@@ -13,7 +13,6 @@ namespace ScheduleMeeting.Entity
         public int CityId {  get; set; }       
         public string CountryCode {  get; set; }
         public string CityCode {  get; set; }
-        
         public string CityName {  get; set; }
     }
 

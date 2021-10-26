@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\ScheduleMettingController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
@@ -16,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ScheduleMeeting.Infrustructure\ScheduleMeeting.Infrustructure.csproj" />
+    <ProjectReference Include="..\ScheduleMeeting.Services\ScheduleMeeting.Services.csproj" />
   </ItemGroup>
 
 </Project>
